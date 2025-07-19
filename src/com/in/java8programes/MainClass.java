@@ -22,6 +22,9 @@ public class MainClass {
 		// 2.Who is the highest paid employee in each department?
 		Map<String, Optional<Employee>> highestPaidEmployee = employees.stream().collect(Collectors
 				.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
+		
+		highestPaidEmployee.forEach((dept, emp) -> 
+	    System.out.println(dept + " => " + emp.get().getName()));
 
 	}
 }
