@@ -25,6 +25,12 @@ public class MainClass {
 		
 		highestPaidEmployee.forEach((dept, emp) -> 
 	    System.out.println(dept + " => " + emp.get().getName()));
+		
+		//3.Filter employees earning more than 60,000
+		List<Employee> filtered = employees.stream().filter(s-> s.getSalary() > 60000).collect(Collectors.toList());
+		
+		filtered.forEach(System.out::println);
+		
 
 	}
 }
